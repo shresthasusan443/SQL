@@ -1,0 +1,217 @@
+1. what is SQL?
+	Structured query language (SQL) is a programming language for storing and processing information in a
+	 relational database.
+
+2.keyfeatures of SQL:
+	a. Data Definition Language (DDL): 
+		SQL provides a set of commands to define and modify the structure of a database, including creating tables, 
+		modifying table structure, and dropping tables.
+	b. Data Manipulation Language (DML): 
+		SQL provides a set of commands to manipulate data within a database, including adding, modifying, and deleting 
+		data.
+	c. Query Language: 
+		SQL provides a rich set of commands for querying a database to retrieve data, including the ability to filter,
+		 sort, group, and join data from multiple tables.
+	d. Transaction Control: 
+		SQL supports transaction processing, which allows users to group a set of database operations into a single 
+		transaction that can be rolled back in case of failure.
+	e. Data Integrity: 
+		SQL includes features to enforce data integrity, such as the ability to specify constraints on the values that 
+		can be inserted or updated in a table, and to enforce referential integrity between tables.
+	f. User Access Control: 
+		SQL provides mechanisms to control user access to a database, including the ability to grant and revoke 
+		privileges to perform certain operations on the database.
+	g. Portability: 
+		SQL is a standardized language, meaning that SQL code written for one database management system can be used on
+		 another system with minimal modification.
+
+3. common use case of SQL.
+	a. Data Science & Analytics: 
+		Used for querying large datasets, data cleaning, and analysis. Analysts use SQL to generate reports and insights
+		 that inform business decisions.
+	b. Machine Learning & AI: 
+		Helps in preparing and managing the data required for training machine learning models and AI algorithms. 
+		It is used for data cleaning, transformation, and extraction.
+	c. Web Development: 
+		Used to manage user data, e-commerce transactions, and content management in websites and applications built
+		 with frameworks like Django, Node.js, and Ruby on Rails.
+	d. Cloud and Big Data: 
+		SQL is integrated into cloud-based databases (e.g., Amazon RDS, Microsoft Azure SQL) and Big Data platforms 
+		(e.g., Apache Hive) to enable seamless data querying and management.
+	e. Blockchain and Decentralized Systems: 
+		In blockchain systems, SQL can be used to manage off-chain data, providing efficient data storage and retrieval
+		 alongside decentralized ledger technology.
+	
+4. importance of SQL in database:
+	a. Data Extraction:
+		One of the most important tasks in data science is to extract data from various sources. SQL is a popular 
+		language for extracting data from relational databases, such as MySQL, Oracle, and Microsoft SQL Server. With 
+		SQL, you can quickly extract data from tables, join multiple tables, and filter data based on specific criteria.
+	b. Data Manipulation:
+		After extracting data, the next step is to clean and transform the data. SQL provides several features that make
+		 it easy to manipulate data. With SQL, you can add, update, or delete records in a table, create views that 
+		 summarize data, and apply aggregate functions such as SUM, COUNT, and AVG to calculate metrics.
+	c. Data Analysis
+		SQL is an important tool for data analysis. Once you have extracted and manipulated the data, you can use SQL to
+		analyze the data and gain insights. SQL provides powerful functions for grouping and sorting data, calculating
+		statistics, and creating custom queries that meet your specific requirements.
+	d. Data Visualization
+		Data visualization is an important aspect of data science. SQL can be used to create visualizations of data by selecting, 
+		aggregating, and grouping data in tables. SQL can also be used to generate charts and graphs, which are essential 
+		tools for visualizing data.
+	e. Performance
+		SQL is designed to work with large datasets efficiently. With SQL, you can optimize your queries to run faster
+		and use less memory. SQL also provides indexing, which speeds up data retrieval by reducing the number of disk 
+		accesses required.
+
+
+SQL DATA TYPE:
+A. numeric data types(number):
+
+S.N  |           NAME          |    DESCRIPTIONS                       |        Example
+1.          integer              whole number                                 age int; 
+2.          bigInt               whole number but length is big               sales BigInt;
+3.          float                with decimal but floating point              discount float;
+4.          double/Number        with decimal                                 price double;
+5.          TINYINT              smaller than int                             status TINYINT;  [0-255]
+6.          SMALLINT             a small integer. range[-32768 to 32767]      height SMALLINT;
+7.          MEDIUMINT            a medium size integer                        product_id MEDIUMINT;
+
+B. String(character) Data types:
+
+S.N  |    NAME         |    DESCRIPTIONS                              |        Example
+1.      CHAR(n)          fixed length string with n characters.          country_code CHAR(2) save upto 2 characters 
+2.      VARCHAR(n)     variable length strings with a max length of n.   name VARCHAR(100) saves upto 100 characters
+
+C. TEXT data types:
+
+S.N  |      NAME            |    DESCRIPTIONS                       |        Example
+1.          TEXT                 stores large amount of text saves        
+                                  upto 65,535 character                      book_synopsis  TEXT
+
+2.          LONGTEXT                   saves upto 4GB                       book_pdf LONGTEXT
+	
+D. DATE AND TIME Data types:
+
+S.N  |    NAME             |    DESCRIPTIONS                                 |        Example
+1.        DATE                stores the date value YYYY-MM-DD.                      dob DATE
+2.        TIME                stores the time value HH-MM-SS.                      event_time TIME
+3.        DATETIME            stores both date and time.                         created_at DATETIME
+4.        YEAR                stores the year value YYYY.                        eg passed_year YEAR
+
+E. Binary Data types:(saves image, files)
+
+S.N  |    NAME                   |    DESCRIPTIONS                              |        Example
+1.       BINARY(n)                   fixed length binary string[n(1-255)] .              profile_picture BINARY(16),password_hash BINARY(16);
+2.       VARBINARY(n)                variable length binary string[n(1-65,535)].         profile_picture VARBINARY(255)
+3.    BLOB(binary large object)      stores large binary data[n(65,535 bytes)].          file BLOB
+
+F. Boolean data types:
+
+S.N  |    NAME         |    DESCRIPTIONS                              |        Example
+1.      BOOLEAN         represents true/false or 1/0.                        is_active BOOLEAN
+
+G. Others Data types:
+
+S.N  |    NAME                   |    DESCRIPTIONS                              |        Example
+
+1.      ENUM                        a string object that can have one value          gender ENUM('male', 'female', 'others')
+                                    from a list of predefined values.	                 NOT NULL DEFAULT 'male';
+2.      SET                          a string object that can have zero or more  
+		                             values from a list of predefined values.          colors SET('pink', 'yellow', 'red'); 
+
+3.      UUID                        a 128-bit number used to uniquely identify       user_id UUID [user_id UUID DEFAULT gen_random_uuid() PRIMARY kEY])
+    (universally unique identifier)       information 
+		 
+ 
+4.      JSON                        a flexible format for storing data as              setting JSON
+                                    a json object
+
+## SQL statement:
+1.SELECT: (retrieving data. syntax: SELECT * FROM table_name;
+		eg: SELECT * FROM students;)
+
+2.INSERT INTO: (inserting data. syntax: INSERT INTO table_name(col1, col2,...)VALUES(val1, val2,...);
+		eg: INSERT INTO students(student_id, name,...)VALUES(123, 'susan',...);)
+		** NOTE: declare datatype insert on particular column **
+
+3.UPDATE: (updating data syntax: UPDATE table_name SET col2 = val2 WHERE condition;
+		eg: UPDATE students SET name = 'mijash' WHERE student_id = 123;)
+
+4.DELETE:  (deleting data. syntax: DELETE FROM table_name WHERE condition;
+		eg: DELETE FROM students WHERE name = 'mijash';) 
+
+5.CREATE: (creating table. syntax: CREATE TABLE table_name(col1 datatype, col2 datatype,...));
+		eg: CREATE TABLE students(student_id INT, name VARCHAR(30),...);
+
+6.ALTER: (modyfying table structure. syntax: ALTER TABLE table_name ADD col1 datatype(n));
+		eg: ALTER TABLE students ADD address VARCHAR(20);
+		eg: ALTER TABLE students DROP COLUMN address;
+
+7.DROP: (deleting a table. syntax: DROP TABLE table_name;
+		eg: DROP TABLE students;)
+
+8.CREATE INDEX: (improving query performance)
+		 syntax: CREATE INDEX index_name ON table_name(col1,col2...);
+		eg: CREATE INDEX idx_std_lname ON students(last_name);
+
+9.JOIN: (combining data from multiple table)
+Types of JOIN
+	a. INNER JOIN:
+		Returns records that have matching values in both tables.
+		syntax: SELECT col1, col2, col3, ....
+		  FROM table_name1
+		  INNER JOIN table_name2
+		  ON table_name1.col1 = table_name2.col1;
+
+
+	b. LEFT JOIN/LEFT OUTER JOIN:
+		Returns all records from the left table, and the matched records from the right table.
+		  Syntax: SELECT col1, col2, col3, ....
+		  FROM table_name1
+		  LEFT JOIN table_name2
+		  ON table_name1.col1 = table_name2.col1;
+
+	
+	c. RIGHT JOIN/RIGHT OUTER JOIN:
+		Returns all records from the right table, and the matched records from the left table
+		  Syntax: SELECT col1, col2, col3, ....
+		  FROM table_name1
+		  RIGHT JOIN table_name2
+		  ON table_name1.col1 = table_name2.col1;
+
+	d. FULL JOIN/FULL OUTER JOIN:
+		selects records that have matching values in these columns and the remaining rows from 		both of the tables.
+		 Syntax: SELECT col1, col2, col3, ....
+		  FROM table_name1
+		  FULL JOIN table_name2
+		  ON table_name1.col1 = table_name2.col1;
+
+
+10.GROUP BY: (grouping data)
+		syntax: select col1, count(*) from table_name group by col1;
+		eg: select first_name, count(*) from students group by first_name;
+
+11. HAVING Clause[COUNT(),AVG(),...]: (filtering group)
+		syntax: select col1, count(*) from table_name group by col1 having count(*) >=3;
+		eg: select first_name, count(*) from students group by first_name having count(*) >=3;
+
+12.ORDER BY Clause[ASC,DESC]:  (sorting result)
+			syntax: SELECT col1 FROM table_name ORDER BY col1 DESC;
+			eg: select first_name from students order by first_name desc; 
+
+13.DISTINCT Keyword: (removing duplicate rows)
+		syntax: SELECT DISTINCT col1 FROM table_name;
+		eg: select distinct first_name from students; 	
+
+14.LIMIT: (limiting rows)	
+	syntax: SELECT * FROM table_name LIMIT number;
+	eg: select * from students limit 5;
+
+15.SUBQUERIES: (queries inside queries)
+	syntax: SELECT col1 FROM table_name WHERE col2 IN(SELECT col2 FROM table_name WHERE condition);	
+	eg: select first_name from students where faculty in(select faculty from students where last_name = 'shrestha');
+
+16.UNION AND UNION ALL: (combining result)
+		syntax: SELECT col1 FROM table_name1 UNION SELECT col2 FROM table_name2;
+		eg: select faculty from students union select library_id from libraries;
